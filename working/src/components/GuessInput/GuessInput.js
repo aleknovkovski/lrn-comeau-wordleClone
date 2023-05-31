@@ -16,6 +16,8 @@ function GuessInput() {
                 id="guess-input"
                 type="text"
                 value={inputValue}
+                pattern=".{5,5}"
+                title="Please enter exactly 5 characters" required
                 onChange={(event) => {
                     setInputValue(event.target.value.toUpperCase())
                 }}
