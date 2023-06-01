@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function GuessInput({handleNewGuess}) {
+function GuessInput({handleNewGuess, enabled}) {
     const [inputValue, setInputValue] = useState('');
 
     function submitHandler(event) {
@@ -17,6 +17,7 @@ function GuessInput({handleNewGuess}) {
                 id="guess-input"
                 type="text"
                 value={inputValue}
+                disabled={!enabled}
                 pattern=".{5,5}"
                 title="Please enter exactly 5 characters" required
                 onChange={(event) => {

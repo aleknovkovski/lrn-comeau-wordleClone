@@ -28,7 +28,7 @@ function Game() {
 
     return <>
         <GuessesList guesses={guesses} answer={answer}/>
-        <GuessInput handleNewGuess={handleNewGuess}/>
+        <GuessInput handleNewGuess={handleNewGuess} enabled={status === 'playing'}/>
         <Banner status={status} guesses={guesses.length} answer={answer}/>
     </>;
 }
