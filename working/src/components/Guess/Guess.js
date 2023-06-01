@@ -1,14 +1,14 @@
 import React from "react";
+import {range} from "../../utils";
 
 function Guess({word}) {
+    const cellsMarkup = range(0, 5, 1).map((index) => {
+        return <span className="cell" key={index}>{word?.[index]}</span>
+    });
 
     return (
         <p className="guess">
-            <span className="cell">{word?.[0]}</span>
-            <span className="cell">{word?.[1]}</span>
-            <span className="cell">{word?.[2]}</span>
-            <span className="cell">{word?.[3]}</span>
-            <span className="cell">{word?.[4]}</span>
+            {cellsMarkup}
         </p>
     );
 }
